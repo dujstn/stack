@@ -8,7 +8,7 @@ export default function NoFiles() {
             <MaterialCommunityIcons
                 name="spider-thread"
                 size={200}
-                style={{ color: Colors["dark"].icon }}
+                style={{ color: Colors["light"].text }}
             />
             <Text style={styles.emptyMessage}>
                 Nothing here. Start stacking!
@@ -18,6 +18,9 @@ export default function NoFiles() {
 }
 
 const styles = StyleSheet.create({
-    container: { alignContent: "center", justifyContent: "center" },
-    emptyMessage: { color: "blue" },
+    container: { flex: 1, alignContent: "center", justifyContent: "center" },
+    emptyMessage: {
+        fontFamily: "SecularOne-Regular",
+        color: Colors["light"].text,
+    },
 });

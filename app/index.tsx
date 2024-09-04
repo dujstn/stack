@@ -1,26 +1,28 @@
 import { Link } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { Colors } from "@/constants/Colors";
-import EmptyFile from "@/components/NoFiles";
+import NoFile from "@/components/NoFiles";
+import LogoHeader from "@/components/LogoHeader";
 
 export default function Index() {
     return (
         <View style={styles.container}>
-            {<EmptyFile />}
+            <LogoHeader title={"stack"} />
+            {<NoFile />}
             <View style={styles.pickerContainer}>
                 <Link href={"/picker"} asChild>
                     <Pressable style={styles.pickerButton}>
                         <AntDesign
                             name="plus"
                             size={24}
-                            color={Colors["dark"].icon}
+                            color={Colors["light"].icon}
                         />
                     </Pressable>
                 </Link>
             </View>
-            <StatusBar style="auto" backgroundColor="green" />
+            <StatusBar style="dark" />
         </View>
     );
 }
@@ -28,21 +30,23 @@ export default function Index() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: "center",
-        // justifyContent: "center",
-        margin: 20,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: Colors["light"].background,
+        padding: 25,
     },
     pickerButton: {
         alignItems: "center",
         justifyContent: "center",
         height: 50,
         width: 50,
-        backgroundColor: Colors["light"].background,
+        backgroundColor: Colors["light"].button,
         padding: 10,
         borderRadius: 50,
     },
     pickerContainer: {
         position: "absolute",
+        margin: 20,
         bottom: 0,
         right: 0,
     },
